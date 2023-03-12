@@ -47,6 +47,32 @@ const routes = [
         ]
     },
     {
+        path:'/cluster',
+        name:'集群',
+        component:layout,
+        icon: 'shop',
+        children: [
+            {
+                path:'/cluster/node',
+                name:'Node',
+                component:()=>import("@/views/cluster/node/node.vue"),
+                meta:{title: 'node'},
+            },
+            {
+                path:'/cluster/namespace',
+                name:'Namespace',
+                component:()=>import("@/views/cluster/namespace/namespace.vue"),
+                meta:{title: 'namespace'},
+            },
+            {
+                path:'/cluster/pv',
+                name:'PV',
+                component:()=>import("@/views/cluster/pv/pv.vue"),
+                meta:{title: 'pv'},
+            }
+        ]
+    },
+    {
         path:'/workspace',
         name:'工作负载',
         component:layout,
@@ -79,32 +105,7 @@ const routes = [
             }
         ]
     },
-    {
-        path:'/cluster',
-        name:'集群',
-        component:layout,
-        icon: 'shop',
-        children: [
-            {
-                path:'/cluster/node',
-                name:'Node',
-                component:()=>import("@/views/cluster/node/node.vue"),
-                meta:{title: 'node'},
-            },
-            {
-                path:'/cluster/namespace',
-                name:'Namespace',
-                component:()=>import("@/views/cluster/namespace/namespace.vue"),
-                meta:{title: 'namespace'},
-            },
-            {
-                path:'/cluster/pv',
-                name:'PV',
-                component:()=>import("@/views/cluster/pv/pv.vue"),
-                meta:{title: 'pv'},
-            }
-        ]
-    },
+
     {
         path:'/loadBalance',
         name:'负载均衡',

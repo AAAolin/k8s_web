@@ -90,6 +90,11 @@
                           <a>{{ restartTotal(scope) }}</a>
                       </template>
                   </el-table-column>
+                  <el-table-column label="pvc">
+                      <template v-slot="scope">
+                          <a v-for="(value,key) in scope.row.spec.volumes[0].persistentVolumeClaim" :key="key" :value="value">{{ value }}</a>
+                      </template>
+                  </el-table-column>
                   <el-table-column label="创建时间">
                       <template v-slot="scope">
                           <a>{{ timeTrans(scope.row.metadata.creationTimestamp) }}</a>
@@ -204,6 +209,9 @@ export default {
         }
     },
     methods:{
+        // getPVCName(value) {
+        //
+        // },
         // 时间转换
         timeTrans(timestamp) {
             let date = new Date(new Date(timestamp).getTime() + 8 * 3600 * 1000)

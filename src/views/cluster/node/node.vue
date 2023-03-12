@@ -8,7 +8,7 @@
                         <el-col :span="18">
                             <!-- clearable 可清空输入内容-->
                             <el-input style="margin-right: 5px; width: 160px" size="small" v-model="searchValue" placeholder="请输入" clearable></el-input>
-                            <el-button size="small" type="primary" icon="Refresh" plain @click="getNode()">搜索</el-button>
+                            <el-button size="small" type="primary" icon="search" plain @click="getNode()">搜索</el-button>
                         </el-col>
                         <el-col style="text-align: right;padding-right: 10px" :span="6">
                             <el-button icon="Refresh" size="small" type="primary" @click="getNode()">刷新</el-button>
